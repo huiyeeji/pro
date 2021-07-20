@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //声明一字符串
+        // var str = 'abcdefabcdaaaa1234';
+        var str = prompt('请输入一串字符串')
+        //创建空对象
+        var jsons = {};
+        //for 遍历 str 存入空对象jsons
+        for (var i = 0; i < str.length; i++) {
+            //不存在则添加
+            if (!jsons[str.charAt(i)]) {
+                jsons[str.charAt(i)] = 1;
+            } else {
+                //存在则++
+                jsons[str.charAt(i)]++
+            }
+        }
+        // console.log(jsons)
+        //声明最大的数
+        var imax = 0;
+        //声明一个字符
+        var istr = '';
+        // 遍历jsons
+        for (var item in jsons) {
+            if (jsons[item] > imax) {
+                imax = jsons[item];
+                istr = item;
+            }
+        }
+        alert(`${istr}出现次数最多${imax}次`)
+    </script>
+</body>
+
+</html>
